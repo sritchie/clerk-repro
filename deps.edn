@@ -1,0 +1,18 @@
+{:paths ["src" "dev"]
+ :deps {org.clojure/clojurescript {:mvn/version "1.11.60"}
+        thheller/shadow-cljs {:mvn/version "2.20.14"}}
+
+ :aliases
+ {:nextjournal/clerk
+  {:extra-deps
+   {io.github.nextjournal/clerk
+    {:git/sha "5cf3982b29c25a6fe70ee4d4444293c5320ff697"}
+    io.github.nextjournal/clerk.render
+    {:git/url "https://github.com/nextjournal/clerk"
+     :git/sha "5cf3982b29c25a6fe70ee4d4444293c5320ff697"
+     :deps/root "render"}}}
+
+  :build
+  {:deps {io.github.clojure/tools.build {:git/tag "v0.8.2" :git/sha "ba1a2bf"}
+          slipset/deps-deploy {:mvn/version "0.2.0"}}
+   :ns-default build}}}

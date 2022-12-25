@@ -1,0 +1,21 @@
+{:deps {:aliases [:nextjournal/clerk]}
+ :dev-http {8766 "public"}
+ :builds
+ {:clerk
+  {:target :esm
+   :runtime :browser
+   :output-dir "public/js"
+   :build-options
+   {:ns-aliases
+    {nextjournal.devcards nextjournal.devcards-noop}}
+
+   :compiler-options
+   {:infer-externs :auto
+    :pretty-print true
+    :pseudo-names true
+    :source-map true}
+   :modules {:main
+             {:entries
+              [nextjournal.clerk.static-app]}}
+   :js-options
+   {:output-feature-set :es8}}}}
